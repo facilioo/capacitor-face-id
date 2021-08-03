@@ -38,7 +38,7 @@ public class FaceId: CAPPlugin {
     @objc func auth(_ call: CAPPluginCall) {
         let authContext = LAContext()
         
-        authContext.touchIDAuthenticationAllowableReuseDuration = 60;
+        authContext.touchIDAuthenticationAllowableReuseDuration = 0;
         
         let reason = call.getString("reason") ?? "Access requires authentication"
         authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason ) { success, error in
