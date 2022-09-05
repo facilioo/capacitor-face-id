@@ -1,6 +1,6 @@
 {
   "name": "capacitor-face-id",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Allow users to authenticate with Face ID or Touch ID on iOS devices",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -14,19 +14,19 @@
   },
   "author": {
     "name": "Daniel Sogl",
-    "email": "mytechde@outlook.com",
-    "url": "https://github.com/danielsogl"
+    "email": "me@danielsogl.de",
+    "url": "https://danielsogl.de"
   },
   "license": "MIT",
   "homepage": "https://danielsogl.github.io/capacitor-face-id/",
   "dependencies": {
-    "@capacitor/core": "^2.4.7"
+    "@capacitor/core": "^2.5.0"
   },
   "devDependencies": {
-    "@capacitor/core": "^2.4.7",
-    "conventional-changelog-cli": "^2.1.1",
-    "typedoc": "^0.21.2",
-    "typescript": "^4.3.4"
+    "@capacitor/ios": "2.5.0",
+    "conventional-changelog-cli": "2.2.2",
+    "typedoc": "0.23.9",
+    "typescript": "4.7.4"
   },
   "files": [
     "dist/",
@@ -36,7 +36,10 @@
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "native",
+    "ios",
+    "face-id",
+    "biometric"
   ],
   "capacitor": {
     "ios": {
