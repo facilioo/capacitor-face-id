@@ -16,16 +16,20 @@ public class FaceId: CAPPlugin {
             let _ = authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
             switch(authContext.biometryType) {
             case .none:
-                call.success([
+                call.resolve([
                     "value": "None"
                 ])
             case .touchID:
-                call.success([
+                call.resolve([
                     "value": "TouchId"
                 ])
             case .faceID:
-                call.success([
+                call.resolve([
                     "value": "FaceId"
+                ])
+            default:
+                call.resolve([
+                    "value": "None"
                 ])
             }
         } else {
@@ -44,10 +48,10 @@ public class FaceId: CAPPlugin {
         authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason ) { success, error in
             if success {
                 DispatchQueue.main.async {
-                    call.success()
+                    call.resolve()
                 }
             } else {
-                call.error(error?.localizedDescription ?? "Failed to authenticate")
+                call.reject(error?.localizedDescription ?? "Failed to authenticate")
             }
         }
     }
